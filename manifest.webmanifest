@@ -3,8 +3,8 @@
  "short_name": "A tavola",
  "start_url": "./",
  "display": "standalone",
- "background_color": "#151412",
- "theme_color": "#151412",
+ "background_color": "#fbf9f5",
+ "theme_color": "#fbf9f5",
  "icons": [
   {
    "src": "icon.svg",

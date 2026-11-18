@@ -264,8 +264,8 @@ async function boot() {
   const data = await (await fetch('data/places.json')).json();
   P = data.places; LODG = data.lodgings || [];
   map = L.map('map', { zoomControl: false, attributionControl: true, tapHold: true }).setView([45.62, 9.2], 9);
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16, maxNativeZoom: 16, attribution: '© Esri, HERE, OpenStreetMap', className: 'map-tiles' }).addTo(map);
-  refLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, maxNativeZoom: 16, pane: 'shadowPane' });
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16, maxNativeZoom: 16, attribution: '© Esri, HERE, OpenStreetMap', className: 'map-tiles' }).addTo(map);
+  refLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, maxNativeZoom: 16, pane: 'shadowPane' });
   map.setMaxZoom(19); applyLabels();
   for (const l of LODG) L.marker([l.lat, l.lng], { icon: L.divIcon({ className: '', html: '<div class="home" title="' + esc(l.name) + '">' + ico('house') + '</div>', iconSize: null }), zIndexOffset: 1500 }).bindTooltip(l.name, { direction: 'top' }).addTo(map);
   const hoverOK = matchMedia('(hover: hover)').matches;
@@ -291,5 +291,5 @@ async function boot() {
   if (location.hash.length > 3) openDetail(decodeURIComponent(location.hash.slice(1)));
   if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js');
 }
-boot().catch(e => { document.body.insertAdjacentHTML('beforeend', '<p style="position:fixed;top:40%;left:16px;right:16px;z-index:9999;background:#151412;padding:16px;border:1px solid #e0533a">Impossible de charger les adresses : ' + esc(e.message) + '. Rechargez la page une fois connecté.</p>'); });
+boot().catch(e => { document.body.insertAdjacentHTML('beforeend', '<p style="position:fixed;top:40%;left:16px;right:16px;z-index:9999;background:#fbf9f5;padding:16px;border:1px solid #e0533a">Impossible de charger les adresses : ' + esc(e.message) + '. Rechargez la page une fois connecté.</p>'); });
 })();
