@@ -207,7 +207,7 @@ function readForm() {
 
 // ---------- geolocation
 function startGeo() {
-  if (!('geolocation' in navigator)) { alert('La géolocalisation n’est pas disponible sur cet appareil.'); return; }
+  if (!('geolocation' in navigator)) { toast('La géolocalisation n’est pas disponible sur cet appareil.'); return; }
   navigator.geolocation.watchPosition(pos => {
     const first = !me; me = { lat: pos.coords.latitude, lng: pos.coords.longitude, acc: pos.coords.accuracy };
     if (!meMarker) { meMarker = L.marker([me.lat, me.lng], { icon: L.divIcon({ className: '', html: '<div class="me"></div>', iconSize: null }), zIndexOffset: 2000, interactive: false }).addTo(map); meCircle = L.circle([me.lat, me.lng], { radius: me.acc, color: '#6fb3ff', weight: 1, fillOpacity: .08, interactive: false }).addTo(map); }
@@ -215,8 +215,10 @@ function startGeo() {
     if (first || follow) map.setView([me.lat, me.lng], first ? Math.max(map.getZoom(), 15) : map.getZoom());
     $('#btn-locate').classList.add('on');
     if (first) render();
-  }, err => { $('#btn-locate').classList.remove('on'); if (err.code === 1) alert('Position refusée : autorisez la localisation pour ce site dans les réglages du navigateur.'); }, { enableHighAccuracy: true, maximumAge: 10000, timeout: 20000 });
+  }, err => { $('#btn-locate').classList.remove('on'); toast(err.code === 1 ? 'Position refusée : autorisez la localisation pour ce site dans les réglages du navigateur, puis touchez à nouveau le bouton.' : 'Position introuvable pour l’instant (signal GPS faible). Réessayez dehors.'); }, { enableHighAccuracy: true, maximumAge: 10000, timeout: 20000 });
 }
+
+function toast(msg) { let t = document.getElementById('toast'); if (!t) { t = document.createElement('div'); t.id = 'toast'; t.className = 'toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); } t.textContent = msg; t.classList.add('on'); clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('on'), 6000); }
 
 // ---------- sheet drag
 function sheetSet(s) { $('#sheet').dataset.state = s; const peek = getComputedStyle(document.documentElement).getPropertyValue('--sheet-peek'); $('#btn-locate').style.bottom = s === 'peek' ? '' : 'calc(55% + 14px)'; if (s === 'full') $('#btn-locate').style.bottom = ''; }
@@ -245,7 +247,7 @@ async function boot() {
   $('#list').addEventListener('click', e => { const li = e.target.closest('.item'); if (li) openDetail(li.dataset.id); });
   $('#back').onclick = () => history.back();
   window.addEventListener('popstate', () => { if (!$('#detail').hidden) closeDetail(); });
-  $('#detail-body').addEventListener('click', e => { const b = e.target.closest('[data-lb]'); if (!b) return; $('#lb-img').src = b.dataset.lb + '=w1600'; $('#lb-cap').textContent = b.dataset.cap; $('#lightbox').showModal(); });
+  $('#detail-body').addEventListener('click', e => { const b = e.target.closest('[data-lb]'); if (!b) return; $('#lb-fig').innerHTML = '<img src="' + esc(b.dataset.lb) + '=w1600" alt="' + esc(b.dataset.cap) + '">'; $('#lb-cap').textContent = b.dataset.cap; $('#lightbox').showModal(); });
   let qt; $('#q').addEventListener('input', e => { clearTimeout(qt); qt = setTimeout(() => { st.q = e.target.value.trim().toLowerCase(); renderLimit = 120; render(); }, 150); });
   document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => { const k = c.dataset.quick; st.quick.has(k) ? st.quick.delete(k) : st.quick.add(k); c.setAttribute('aria-pressed', st.quick.has(k)); renderLimit = 120; render(); }));
   $('#btn-filters').onclick = () => { syncForm(); $('#filters').showModal(); };
