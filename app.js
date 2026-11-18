@@ -23,7 +23,7 @@ const fmtDist = km => km < 1 ? Math.round(km * 100) * 10 + ' m' : (km < 10 ? km.
 function badgeIcons(p) { return (p.flags.pepite ? ico('gem', 'b-pep') : '') + (p.flags.slay ? ico('flame', 'b-slay') : '') + (p.flags.local ? ico('house', 'b-loc') : '') + (p.flags.copious ? ico('soup', 'b-cop') : '') + (p.tf && p.tf.max ? ico('percent', 'b-tf') : ''); }
 
 // ---------- display settings (saved on the phone)
-const CFG_DEF = { size: 'L', info: 'score', labels: false, cluster: 'normal' };
+const CFG_DEF = { size: 'L', info: 'score', labels: false, cluster: 'normal', thumbs: true };
 let cfg = Object.assign({}, CFG_DEF, JSON.parse(localStorage.getItem('atavola-cfg') || '{}'));
 const SIZE_PX = { S: 30, M: 38, L: 46, XL: 58 };
 const CLUSTER = { fort: 1.5, normal: 1.05, faible: 0.6, aucun: 0 };
@@ -129,7 +129,9 @@ function itemHtml(p) {
   if (p.flags.pepite) b.push('<span class="bdg pepite">' + ico('gem') + 'Pépite</span>'); if (p.flags.slay) b.push('<span class="bdg slay">' + ico('flame') + 'Slay</span>');
   if (p.flags.local) b.push('<span class="bdg">' + ico('house') + 'Local</span>'); if (p.flags.copious) b.push('<span class="bdg">' + ico('soup') + 'Copieux</span>');
   if (p.tf) b.push('<span class="bdg tf">' + ico('percent') + 'TheFork' + (p.tf.max ? ' −' + p.tf.max + '%' : '') + '</span>');
-  return '<li class="item" data-id="' + esc(p.id) + '"><span class="tdisc big2 ' + (p.size === 'comptoir' ? '' : 'sq ') + 't-' + p.type + (open ? '' : ' closed') + '" title="' + esc(TYPES[p.type]) + '">' + ico(iconFor(p)) + '</span>' +
+  const disc = '<span class="tdisc big2 ' + (p.size === 'comptoir' ? '' : 'sq ') + 't-' + p.type + (open ? '' : ' closed') + '" title="' + esc(TYPES[p.type]) + '">' + ico(iconFor(p)) + '</span>';
+  const lead = cfg.thumbs && p.food && p.food.length ? '<span class="th"><img src="' + esc(p.food[0].url) + '=w180-h180-p-k-no" alt="' + esc(p.food[0].label || 'Plat') + ' chez ' + esc(p.name) + '" loading="lazy" onerror="this.remove()">' + disc + '</span>' : disc;
+  return '<li class="item" data-id="' + esc(p.id) + '">' + lead +
     '<div class="ib"><h3><span class="nm">' + esc(p.name) + '</span></h3>' +
     '<div class="meta"><span>' + esc(TYPES[p.type]) + ' · ' + esc(SIZES[p.size]) + '</span>' + (p._d != null ? '<span class="num">' + fmtDist(p._d) + '</span>' : '') + (open ? '' : '<span class="cl">fermé</span>') + '</div>' +
     (kp.length ? '<div class="keyprices">' + kp.map(x => '<span>' + x + ' €</span>').join('') + '</div>' : '') + (b.length ? '<div class="badges">' + b.join('') + '</div>' : '') + '</div>' +
@@ -169,6 +171,7 @@ function openDetail(id, fromMap) {
   let html = '';
   if (front) html += '<figure class="hero" style="margin:0"><img src="' + esc(front) + '" alt="Devanture de ' + esc(p.name) + '" loading="lazy" onerror="this.parentNode.remove()"><figcaption>' + (p.frontLocal ? 'Devanture (Street View)' : 'Photo Google') + '</figcaption></figure>';
   html += '<div class="d-head"><div class="d-row"><span class="tdisc big ' + (p.size === 'comptoir' ? '' : 'sq ') + 't-' + p.type + '">' + ico(iconFor(p)) + '</span><div><h2>' + esc(p.name) + '</h2><div class="d-sub">' + esc(TYPES[p.type]) + ' · ' + esc(SIZES[p.size]) + ' · ' + esc(p.cuisine.join(', ')) + '</div></div><span class="ms big ' + sCls(p.score.total) + '">' + fs1(p.score.total) + '</span></div><div class="d-sub">★ ' + String(p.rating).replace('.', ',') + ' sur Google (' + p.nReviews + ' avis) · ' + esc(p.address) + '</div></div>';
+  if (p.food && p.food.length) { const fd = d => { if (!d) return ''; const [y, mo] = d.split('-'); return String(mo).padStart(2, '0') + '/' + y; }; html += '<div class="sec food"><h3>Les plats en photo</h3><div class="photos">' + p.food.map(f => '<button data-lb="' + esc(f.url) + '" data-cap="' + esc((f.label ? f.label + ' · ' : '') + p.name + (f.date ? ' · photo du ' + fd(f.date) : '')) + '"><img src="' + esc(f.url) + '=w320-h320-p-k-no" alt="' + esc(f.label || 'Plat') + '" loading="lazy" onerror="this.parentNode.remove()"><span>' + esc(f.label || 'Plats et boissons') + (f.date ? ' · ' + fd(f.date) : '') + '</span></button>').join('') + '</div><p class="src">Photos publiées par les clients sur Google Maps. Touchez pour agrandir.</p></div>'; }
   const fl = [];
   if (p.flags.pepite) fl.push('<span class="bdg pepite">' + ico('gem') + 'Pépite</span>'); if (p.flags.slay) fl.push('<span class="bdg slay">' + ico('flame') + 'Slay</span>');
   if (p.flags.local) fl.push('<span class="bdg">' + ico('house') + 'Local · ' + p.sig.itShare + ' % des avis en italien</span>'); else if (p.sig.itShare != null) fl.push('<span class="bdg">' + p.sig.itShare + ' % des avis en italien</span>');
@@ -232,7 +235,7 @@ function initSettings() {
   f.addEventListener('change', () => {
     const prevCluster = cfg.cluster;
     f.querySelectorAll('input[type=radio]:checked').forEach(i => cfg[i.name] = i.value);
-    cfg.labels = f.labels.checked; saveCfg(); applyLabels();
+    cfg.labels = f.labels.checked; cfg.thumbs = f.thumbs.checked; saveCfg(); applyLabels();
     if (cfg.cluster !== prevCluster) makeCluster();
     render(true);
   });
