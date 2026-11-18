@@ -1,0 +1,385 @@
+{
+ "updated": "2026-11-18",
+ "source": "Horaires Google Maps relevés le 18/11/2026 pour les dates exactes ; événements : milanofree.it",
+ "visits": [
+  {
+   "id": "v1",
+   "rank": 1,
+   "note": 9.6,
+   "name": "Piazza del Duomo et la cathédrale",
+   "lat": 45.464097599999995,
+   "lng": 9.1919265,
+   "address": "P.za del Duomo, 20122 Milano MI, Italia",
+   "rating": 4.8,
+   "nReviews": 213002,
+   "gmaps": "https://www.google.com/maps?cid=12357681832208772627",
+   "photo": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QzuoTZ7IYB2aqSA-eRkt879IyOowE1mL8Fuybxjk4cCkwpIrdLnplfjtHsHwAlAMl00b5MOpN2dBFiSUuD6iYd2IVAm3jjwJJq_viTUOmxBPRh4uGTRqQNwaoGFv72vPbCa2VDKq0Ye16R=w397-h298-k-no",
+   "hours": {
+    "thu": "Place libre · cathédrale 09–18",
+    "sun": "Place libre · cathédrale 09–18"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Le symbole de Milan : près de six siècles de chantier, une façade de marbre rose et des milliers de statues. Faites le tour par la droite (via Arcivescovado) pour voir les flèches de près.",
+   "tip": "Vers 16h50 (coucher du soleil), la façade vire au rose.",
+   "warn": "Regarder de l’extérieur est gratuit. L’intérieur et les toits sont payants (billet en ligne).",
+   "src": null
+  },
+  {
+   "id": "v2",
+   "rank": 2,
+   "note": 9.4,
+   "name": "Galleria Vittorio Emanuele II",
+   "lat": 45.4658434,
+   "lng": 9.1899401,
+   "address": "20123 Milano MI, Italia",
+   "rating": 4.7,
+   "nReviews": 117274,
+   "gmaps": "https://www.google.com/maps?cid=2813514643363451926",
+   "photo": null,
+   "hours": {
+    "thu": "Accès libre 24h/24",
+    "sun": "Accès libre 24h/24"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit",
+    "noel"
+   ],
+   "why": "Le « salon de Milan », galerie de verre et de fer de 1867. Sous la coupole, le taureau en mosaïque : la tradition veut qu’on tourne sur le talon posé dessus.",
+   "tip": "Noël : les illuminations de la ville sont allumées depuis le 15 novembre ; un sapin et une voûte lumineuse sous la coupole sont annoncés pour 2026.",
+   "warn": "La date d’allumage du sapin de la Galleria n’est pas publiée : il peut ne pas être encore là.",
+   "src": "https://www.milanofree.it/milano/eventi/natale-degli-alberi-2025-a-milano-mappa-date-alberi-piu-belli-e-consigli-utili.html"
+  },
+  {
+   "id": "v3",
+   "rank": 3,
+   "note": 9.3,
+   "name": "San Maurizio al Monastero Maggiore",
+   "lat": 45.465640199999996,
+   "lng": 9.178937399999999,
+   "address": "Corso Magenta, 15, 20123 Milano MI, Italia",
+   "rating": 4.8,
+   "nReviews": 8412,
+   "gmaps": "https://www.google.com/maps?cid=17225989277458713839",
+   "photo": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QLc89d7ZizSyikAkkoEaKvr5EKwDzhAyPXv2Vdety0dRgIq1XNJDxk4R6bvw-PSClsxwj1sd-8Kjizumwa6YguZTpudAyaxdW1-huzeFq5c0gVIULZ5yL6zYAZU-Hk9oTAlu16rOlkHiQ5=w395-h298-k-no",
+   "hours": {
+    "thu": "10–17",
+    "sun": "10–17"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Surnommée la « chapelle Sixtine de Milan » : chaque centimètre des murs est couvert de fresques du XVIe siècle. Gratuite, peu connue des touristes, 15 minutes suffisent.",
+   "tip": null,
+   "warn": "Ferme à 17h les deux jours : à faire en premier.",
+   "src": null
+  },
+  {
+   "id": "v4",
+   "rank": 4,
+   "note": 9,
+   "name": "Castello Sforzesco",
+   "lat": 45.4704762,
+   "lng": 9.1793325,
+   "address": "Piazza Castello, 20121 Milano MI, Italia",
+   "rating": 4.7,
+   "nReviews": 96287,
+   "gmaps": "https://www.google.com/maps?cid=7302267279280095899",
+   "photo": null,
+   "hours": {
+    "thu": "07–19:30",
+    "sun": "07–19:30"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Le château des Sforza (XVe siècle), sa grande tour d’entrée et ses cours immenses. Entrer dans les cours est gratuit ; les musées sont payants et facultatifs.",
+   "tip": "Nouveauté 2026 : un sapin est prévu dans la cour de la Rocchetta (pas encore confirmé).",
+   "warn": null,
+   "src": null
+  },
+  {
+   "id": "v5",
+   "rank": 5,
+   "note": 8.8,
+   "name": "Navigli et Darsena le soir",
+   "lat": 45.453634799999996,
+   "lng": 9.1757125,
+   "address": "20144 Milano MI, Italia",
+   "rating": 4.4,
+   "nReviews": 652,
+   "gmaps": "https://www.google.com/maps/search/?api=1&query=Darsena%20Milano",
+   "photo": null,
+   "hours": {
+    "thu": "Accès libre",
+    "sun": "Accès libre"
+   },
+   "when": "thu",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Les canaux de Milan, bordés de bars et de lumières à la nuit tombée : le meilleur coin pour l’aperitivo et le dîner. En descendant du Duomo, passez par les Colonne di San Lorenzo, seize colonnes romaines en pleine rue.",
+   "tip": "Idéal jeudi en fin de journée (métro M2 Porta Genova).",
+   "warn": null,
+   "src": null
+  },
+  {
+   "id": "v6",
+   "rank": 6,
+   "note": 8.8,
+   "name": "Brera, ruelles et cour du Palais",
+   "lat": 45.471954499999995,
+   "lng": 9.1878145,
+   "address": "Via Brera, 28, 20121 Milano MI, Italia",
+   "rating": 4.7,
+   "nReviews": 35880,
+   "gmaps": "https://www.google.com/maps?cid=1960889438820185910",
+   "photo": null,
+   "hours": {
+    "thu": "Cour 08:30–19:15",
+    "sun": "Cour 08:30–19:15"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Le quartier le plus joli à pied : rues pavées (via Fiori Chiari, via Madonnina) et la cour à arcades du Palazzo di Brera, avec la statue de Napoléon. La cour est gratuite, la Pinacothèque payante.",
+   "tip": "Dimanche 22 : Brera Street Market (vintage, artisanat) dans la via Brera.",
+   "warn": "Horaires du marché du dimanche non publiés.",
+   "src": "https://www.milanofree.it/milano/eventi/cosa-fare-a-milano-e-dintorni-questo-weekend-eventi-e-sagre.html"
+  },
+  {
+   "id": "v7",
+   "rank": 7,
+   "note": 8.6,
+   "name": "Porta Nuova : Gae Aulenti, Bosco Verticale, BAM",
+   "lat": 45.4835311,
+   "lng": 9.1893555,
+   "address": "20154 Milano MI, Italia",
+   "rating": 4.8,
+   "nReviews": 141,
+   "gmaps": "https://www.google.com/maps?cid=8584970021575722965",
+   "photo": null,
+   "hours": {
+    "thu": "Accès libre 24h/24",
+    "sun": "Accès libre 24h/24"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit",
+    "noel"
+   ],
+   "why": "Le Milan moderne : la place ronde aux gratte-ciel, les deux tours-forêts du Bosco Verticale et le parc BAM juste derrière. Plus beau à la tombée de la nuit, quand les tours s’allument.",
+   "tip": "Dimanche 22 : marché de Noël solidaire « L’abilità » à la Fondazione Catella (via de Castillia 28), 10h-20h, entrée gratuite ; chants de Noël à 18h.",
+   "warn": null,
+   "src": "https://www.milanofree.it/milano/eventi/l-abilita-christmas-market-2026-a-milano-date-orari-e-programma.html"
+  },
+  {
+   "id": "v8",
+   "rank": 8,
+   "note": 8.3,
+   "name": "Rinascente, 7e étage face au Duomo",
+   "lat": 45.4649368,
+   "lng": 9.191822799999999,
+   "address": "P.za del Duomo, 20121 Milano MI, Italia",
+   "rating": 4.4,
+   "nReviews": 24863,
+   "gmaps": "https://www.google.com/maps?cid=11611806535064570536",
+   "photo": null,
+   "hours": {
+    "thu": "10–22",
+    "sun": "10–22"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Le grand magasin collé au Duomo : montez au 7e étage (food hall), entrée libre, et vous avez les flèches de la cathédrale à quelques mètres. Le point de vue gratuit le plus proche des toits.",
+   "tip": null,
+   "warn": "La terrasse elle-même appartient aux bars : il faut consommer pour s’y asseoir.",
+   "src": null
+  },
+  {
+   "id": "v9",
+   "rank": 9,
+   "note": 8.2,
+   "name": "San Bernardino alle Ossa",
+   "lat": 45.4624166,
+   "lng": 9.1955412,
+   "address": "Piazza Santo Stefano, 20122 Milano MI, Italia",
+   "rating": 4.6,
+   "nReviews": 4679,
+   "gmaps": "https://www.google.com/maps?cid=10998536527434863613",
+   "photo": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tdjw69Y5Vah8T1Kv7no6UJPMyybziBK_R1TotLUSnAGJGRbrG6VA0dcRnFLllV_DxDy65eb68tNnxSfozi3l1mgWn4P_hd_27HQ1949RNllAhnGBg4v407nMO2H7TpgHCJojnfuRByrnCx=w224-h298-k-no",
+   "hours": {
+    "thu": "08–18",
+    "sun": "09:30–12"
+   },
+   "when": "thu",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Une chapelle dont les murs sont tapissés d’os et de crânes, ancien ossuaire d’un hôpital. Étrange et inoubliable, gratuite, à 5 minutes du Duomo.",
+   "tip": null,
+   "warn": "Dimanche, ouverte seulement le matin (9h30-12h) : c’est jeudi ou jamais.",
+   "src": null
+  },
+  {
+   "id": "v10",
+   "rank": 10,
+   "note": 8.2,
+   "name": "Cimitero Monumentale",
+   "lat": 45.4858298,
+   "lng": 9.1819043,
+   "address": "Piazzale Cimitero Monumentale, 31, 20154 Milano MI, Italia",
+   "rating": 4.8,
+   "nReviews": 2640,
+   "gmaps": "https://www.google.com/maps?cid=6127115198876622740",
+   "photo": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RWdtH6WPENdOzt9KFFtk1BT12NkQ-8qE9BU8ZrsA6BMRnRXPVcpp1ySHXKRdY1vZbcFmisV51D7Tp5e1G7Uuk6g_39-d0EkDnLdJM3ZpolyzVICjY8JzZ6PS8pvrrMIpHL0DzaUEEb3TrL=w397-h298-k-no",
+   "hours": {
+    "thu": "08–17:30",
+    "sun": "08–17:30"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Un musée à ciel ouvert : tombes-sculptures Art nouveau, petits temples, statues spectaculaires. Gratuit, et à 10 minutes à pied de Porta Nuova.",
+   "tip": null,
+   "warn": "Ferme à 17h30.",
+   "src": null
+  },
+  {
+   "id": "v11",
+   "rank": 11,
+   "note": 8,
+   "name": "Basilique Sant’Ambrogio",
+   "lat": 45.462292,
+   "lng": 9.1755604,
+   "address": "Piazza Sant'Ambrogio, 15, 20123 Milano MI, Italia",
+   "rating": 4.7,
+   "nReviews": 16952,
+   "gmaps": "https://www.google.com/maps?cid=3052954339645964131",
+   "photo": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SKdqCL7u2IpxIaTjlTq7blGvikgXBii2473dIBm409QUd2w5nLCx3XV9c70JOVGmMPhxmeY6cDI38gTxuMpoVUHteXDYrnKwV8_PwJmk_39ibtnL8lX8jT0Zwxv4pTNpXyCuKO=w357-h298-k-no",
+   "hours": {
+    "thu": "07:30–12:30, 14:30–19",
+    "sun": "08–13, 15–20"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "L’église du saint patron de Milan, fondée au IVe siècle, avec son grand atrium roman en briques. Gratuite, calme, à 10 minutes de San Maurizio.",
+   "tip": null,
+   "warn": "Jeudi ouverte à partir de 14h30, dimanche à partir de 15h.",
+   "src": null
+  },
+  {
+   "id": "v12",
+   "rank": 12,
+   "note": 7.9,
+   "name": "Santa Maria presso San Satiro",
+   "lat": 45.4628771,
+   "lng": 9.1876895,
+   "address": "Via Torino, 20123 Milano MI, Italia",
+   "rating": 4.7,
+   "nReviews": 4616,
+   "gmaps": "https://www.google.com/maps?cid=11805858908552923072",
+   "photo": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QZjOPfdxAyY3DLecvWNqlbXqQ8st1m1fQlTkPWhFcjt-O8jq3S8FRZRKUY334UPQjRD_EhP55avHinXFXUKedI4fLIm_V0YVcR5bzn3VtIACxFqOr1qji1CP8Eqrq6WpLlbxGu=w395-h298-k-no",
+   "hours": {
+    "thu": "07:30–18",
+    "sun": "09:30–12, 15:30–19"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Une illusion d’optique de la Renaissance : Bramante a peint un faux chœur profond sur un mur presque plat. Depuis l’entrée on y croit vraiment. Gratuite, à 2 minutes du Duomo.",
+   "tip": null,
+   "warn": "Dimanche ouverte seulement à partir de 15h30.",
+   "src": null
+  },
+  {
+   "id": "v13",
+   "rank": 13,
+   "note": 7.8,
+   "name": "Villaggio delle Meraviglie (village de Noël)",
+   "lat": 45.4741791,
+   "lng": 9.2004552,
+   "address": "Via Palestro, 14, 20121 Milano MI, Italia",
+   "rating": 4.5,
+   "nReviews": 275,
+   "gmaps": "https://www.google.com/maps?cid=17509116362253246751",
+   "photo": null,
+   "hours": {
+    "thu": "Pas encore ouvert (ouvre le 20/11)",
+    "sun": "Parc 06:30–23:30"
+   },
+   "when": "sun",
+   "tags": [
+    "gratuit",
+    "noel",
+    "now"
+   ],
+   "why": "Le village de Noël des jardins Montanelli : patinoire, maison du Père Noël, manèges, stands de street food. Entrée libre, attractions payantes. Il ouvre le 20 novembre : vous l’aurez tout neuf dimanche.",
+   "tip": null,
+   "warn": "Pas encore ouvert jeudi 19. Horaires 2026 des attractions non publiés (en 2025 : week-end 10h-20h).",
+   "src": "https://www.milanofree.it/milano/eventi/villaggio-delle-meraviglie-2025-a-milano-pista-di-pattinaggio-casa-di-babbo-natale-e-street-food-ai-giardini-montanelli.html"
+  },
+  {
+   "id": "v14",
+   "rank": 14,
+   "note": 7.6,
+   "name": "Parco Sempione et Arco della Pace",
+   "lat": 45.475692699999996,
+   "lng": 9.1724514,
+   "address": "Piazza Sempione, 20154 Milano MI, Italia",
+   "rating": 4.7,
+   "nReviews": 38373,
+   "gmaps": "https://www.google.com/maps?cid=18139571644073887253",
+   "photo": null,
+   "hours": {
+    "thu": "Accès libre 24h/24",
+    "sun": "Accès libre 24h/24"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Le grand parc derrière le château, jusqu’à l’Arc de la Paix, arc de triomphe néoclassique voulu par Napoléon. Balade gratuite dans le prolongement du Castello.",
+   "tip": null,
+   "warn": null,
+   "src": null
+  },
+  {
+   "id": "v15",
+   "rank": 15,
+   "note": 7.2,
+   "name": "Pirelli HangarBicocca",
+   "lat": 45.5209677,
+   "lng": 9.219177799999999,
+   "address": "Via Chiese, 2, 20126 Milano MI, Italia",
+   "rating": 4.6,
+   "nReviews": 9378,
+   "gmaps": "https://www.google.com/maps?cid=2500571632187747814",
+   "photo": null,
+   "hours": {
+    "thu": "10:30–20:30",
+    "sun": "10:30–20:30"
+   },
+   "when": "both",
+   "tags": [
+    "gratuit"
+   ],
+   "why": "Une ancienne usine géante où se dressent les « Sept Palais célestes » d’Anselm Kiefer, sept tours de béton dans la pénombre. Toujours gratuit, impressionnant.",
+   "tip": null,
+   "warn": "Excentré (métro M5 Ponale, environ 25 min du centre) : seulement si l’art contemporain vous tente.",
+   "src": null
+  }
+ ]
+}
