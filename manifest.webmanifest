@@ -1,0 +1,15 @@
+{
+ "name": "A tavola · Milan & Côme",
+ "short_name": "A tavola",
+ "start_url": "./",
+ "display": "standalone",
+ "background_color": "#151412",
+ "theme_color": "#151412",
+ "icons": [
+  {
+   "src": "icon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml"
+  }
+ ]
+}

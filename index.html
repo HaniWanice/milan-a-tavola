@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#151412">
+<title>A tavola · Milan & lac de Côme</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="map" aria-label="Carte des adresses"></div>
+
+<header class="bar">
+  <div class="bar-row">
+    <h1 class="brand">A tavola<span>Milan · Côme</span></h1>
+    <label class="search"><span class="sr">Chercher un nom</span><input id="q" type="search" placeholder="Nom, plat, quartier…" autocomplete="off"></label>
+    <button id="btn-filters" class="btn-filters" aria-haspopup="dialog" aria-controls="filters">Filtres <b id="nf" hidden>0</b></button>
+  </div>
+  <div class="chips" role="group" aria-label="Filtres rapides">
+    <button class="chip" data-quick="now" aria-pressed="false">Ouvert maintenant</button>
+    <button class="chip" data-quick="petitdej" aria-pressed="false">Petit-déj</button>
+    <button class="chip" data-quick="repas" aria-pressed="false">Repas</button>
+    <button class="chip" data-quick="pepite" aria-pressed="false">Pépite</button>
+    <button class="chip" data-quick="cheap" aria-pressed="false">Pas cher</button>
+    <button class="chip" data-quick="standing" aria-pressed="false">Sur le pouce</button>
+    <button class="chip" data-quick="local" aria-pressed="false">Local</button>
+    <button class="chip" data-quick="thefork" aria-pressed="false">TheFork</button>
+  </div>
+</header>
+
+<button id="btn-locate" class="locate" aria-label="Centrer sur ma position"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8" fill="none"/></svg></button>
+
+<section id="sheet" class="sheet" data-state="peek" aria-label="Liste des adresses">
+  <div class="grip" id="grip" role="button" tabindex="0" aria-label="Agrandir ou réduire la liste"><i></i></div>
+  <div class="sheet-head">
+    <p id="count" class="count" aria-live="polite"></p>
+    <label class="sort"><span>Trier</span>
+      <select id="sort"><option value="dist">Distance</option><option value="price">Prix</option><option value="rating">Note</option><option value="value">Rapport qualité-prix</option></select>
+    </label>
+  </div>
+  <ol id="list" class="list"></ol>
+</section>
+
+<section id="detail" class="detail" hidden aria-label="Fiche de l'adresse">
+  <div class="detail-top"><button id="back" class="back">← Liste</button></div>
+  <div id="detail-body" class="detail-body"></div>
+</section>
+
+<dialog id="filters" class="filters" aria-label="Filtres">
+  <form method="dialog" id="ff">
+    <div class="f-head"><h2>Filtres</h2><button type="button" id="reset" class="link">Tout effacer</button></div>
+    <fieldset><legend>Quand</legend>
+      <div class="seg" id="f-day">
+        <label><input type="radio" name="day" value="auto" checked><span>Aujourd'hui</span></label>
+        <label><input type="radio" name="day" value="thu"><span>Jeu 19</span></label>
+        <label><input type="radio" name="day" value="fri"><span>Ven 20</span></label>
+        <label><input type="radio" name="day" value="sat"><span>Sam 21</span></label>
+        <label><input type="radio" name="day" value="sun"><span>Dim 22</span></label>
+      </div>
+      <label class="row"><input type="checkbox" name="useTime"> <span>Ouvert à</span> <input type="time" name="time" value="13:00" step="900"></label>
+    </fieldset>
+    <fieldset><legend>Budget par personne</legend>
+      <label class="range"><input type="range" name="maxPrice" min="5" max="60" step="1" value="60"><output id="o-price">sans limite</output></label>
+      <label class="row"><input type="checkbox" name="hideExpensive"> <span>Masquer les adresses chères (plus de 30 €)</span></label>
+    </fieldset>
+    <fieldset><legend>Moment</legend>
+      <div class="opts" data-name="meal"><label><input type="checkbox" value="petitdej"><span>Petit-déjeuner</span></label><label><input type="checkbox" value="repas"><span>Déjeuner / dîner</span></label></div>
+    </fieldset>
+    <fieldset><legend>Type de lieu</legend><div class="opts" data-name="type" id="f-type"></div></fieldset>
+    <fieldset><legend>Cuisine</legend><div class="opts" data-name="cuisine" id="f-cuisine"></div></fieldset>
+    <fieldset><legend>Caractère</legend>
+      <div class="opts" data-name="flag">
+        <label><input type="checkbox" value="local"><span>Local <small>avis surtout en italien</small></span></label>
+        <label><input type="checkbox" value="nonlocal"><span>Pas forcément local</span></label>
+        <label><input type="checkbox" value="pepite"><span>Pépite</span></label>
+        <label><input type="checkbox" value="copious"><span>Copieux</span></label>
+        <label><input type="checkbox" value="slay"><span>Slay <small>4,7+ sur 500+ avis</small></span></label>
+        <label><input type="checkbox" value="standing"><span>Sur le pouce / debout</span></label>
+        <label><input type="checkbox" value="menu"><span>Photo du menu lue</span></label>
+        <label><input type="checkbox" value="thefork"><span>Sur TheFork</span></label>
+        <label><input type="checkbox" value="hp"><span>Trouvé hors des sentiers</span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Note Google minimale</legend>
+      <div class="seg" id="f-rating">
+        <label><input type="radio" name="minRating" value="0" checked><span>Toutes</span></label>
+        <label><input type="radio" name="minRating" value="4.3"><span>4,3+</span></label>
+        <label><input type="radio" name="minRating" value="4.5"><span>4,5+</span></label>
+        <label><input type="radio" name="minRating" value="4.7"><span>4,7+</span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Zone</legend><div class="opts" data-name="zone" id="f-zone"></div></fieldset>
+    <div class="f-foot"><button class="apply" value="ok">Voir <span id="f-count"></span> adresses</button></div>
+  </form>
+</dialog>
+
+<dialog id="lightbox" class="lightbox"><form method="dialog"><button class="lb-close" aria-label="Fermer">×</button></form><img id="lb-img" alt=""><p id="lb-cap"></p></dialog>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
