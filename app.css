@@ -334,3 +334,29 @@ legend{padding:0;font-stretch:75%;font-weight:800;text-transform:uppercase;lette
 .th .tdisc.big2 .ic{width:15px;height:15px}
 .food .photos button{width:152px}
 .food .photos img{width:150px;height:150px}
+
+/* likes */
+:root{--like:#e0245e}
+.heart{width:40px;height:40px;border-radius:50%;border:1px solid var(--rule);background:#fff;color:var(--ink-3);display:grid;place-items:center;padding:0;flex:none}
+.heart .ic{width:20px;height:20px}
+.heart.on{color:var(--like);border-color:var(--like);background:#fdeaf0}
+.heart.on .ic{fill:var(--like)}
+.heart.big{width:48px;height:48px}.heart.big .ic{width:24px;height:24px}
+.heart:active{transform:scale(.9)}
+.item .sc .heart{margin-bottom:4px;width:36px;height:36px}
+.item.liked{background:#fff3f6;box-shadow:inset 3px 0 0 var(--like)}
+.dh-r{display:flex;flex-direction:column;align-items:center;gap:8px}
+.mk.liked{border-color:var(--like);border-width:2.5px;transform:translate(-50%,-50%) scale(1.12)}
+.mk .corner.like,.clus .corner.like{background:var(--like);color:#fff}
+.corner.like .ic{fill:#fff}
+.clus .corner.like{width:auto;min-width:22px;padding:0 4px;border-radius:11px;gap:2px;display:flex;align-items:center;justify-content:center}
+.clus .corner.like i{font-style:normal;font-size:11px;font-weight:800}
+.chip-like .ic{color:var(--like)}
+.chip-like[aria-pressed=true]{background:var(--like);border-color:var(--like);color:#fff}
+.chip-like[aria-pressed=true] .ic{color:#fff;fill:#fff}
+.chip-like .n:empty{display:none}
+.chip-like .n{margin-left:4px;font-weight:800}
+.peek-l .pn em.lk{color:var(--like)}
+.peek-l .pn em.lk .ic{fill:var(--like)}
+.b-like{color:var(--like)}
+#s-share .ic{width:18px;height:18px}
